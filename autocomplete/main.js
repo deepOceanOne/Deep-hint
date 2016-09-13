@@ -61,6 +61,9 @@ function KeywordList ()
     	{
     		tmp.push(ret[i][0]);
     	}
+
+console.log("result is : "+ tmp);
+
     	return tmp;
 	 }
 	 
@@ -106,6 +109,8 @@ function KeywordList ()
 
 var kw = new KeywordList();
 
+var kwupside = require('./search.js');
+
 kw.init("./data");
 
 var urls= [
@@ -113,8 +118,9 @@ var urls= [
 		 var query = param.query;
 		 res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
 		 
-		 var js = kw.search(query.q,query.size);
-  		 res.end(JSON.stringify(js));	
+		 var js = kwupside.search(query.q,query.size,function(result){
+  		 	res.end(JSON.stringify(result));	
+		 });
 	}],
 	
 	['^/',function(req,res){
@@ -130,5 +136,5 @@ var urls= [
 ]
 
 
-http.createServer(  router.include(urls) ).listen(8000, '0.0.0.0');
+http.createServer(  router.include(urls) ).listen(3000, '0.0.0.0');
 console.log('Server running at http://127.0.0.1:8000/');

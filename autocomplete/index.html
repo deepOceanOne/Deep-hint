@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
 <link rel="stylesheet" href="css/jquery.autocompleter.css">
   <script>
-/*
   $(function() {
     
     $( "#tags" ).autocomplete({
@@ -21,17 +20,27 @@
       }
     });
   });
-*/
+/*
 $(function () {
     $('#tags').autocompleter({ source: '/qs.b' });
 });
-
+*/
+/*
+var data = [
+    { "value": "1", "label": "one" },
+    { "value": "2", "label": "two" },
+    { "value": "3", "label": "three" }
+];
+$(function () {
+    $('input').autocompleter({ source: data });
+});
+*/
 
   </script>
 </head>
 <body>
  
-<div class="ui-widget" style="margin:50px auto;width:400px">
+<div class="ui-widget" style="margin:50px auto;width:500px border-radius:25px;border:2px solid;border-color:#a72525">
   <label for="tags">Tags: </label>
   <input id="tags">
 </div>
