@@ -1,0 +1,11 @@
+{
+  "name": "autocomplete",
+  "version": "1.0.0",
+  "description": "智能提示对与搜索非常重要，相对于机器学习来说，可以称为 **集体学习**，用集体智慧来识别用户查询，用很小的成本换来较大的收益",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -6,6 +6,31 @@ var http = require('http')
 String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g, '');};
 
 
+function _join(arr,len,key){
+	var forreturn = [];
+	if(len<arr.length){
+		for(var i=0;i<len;i++){
+			forreturn.push(_filter(arr[i].text,key,6));	
+		}	
+	}else{
+		for(var i=0;i<arr.length;i++){
+			forreturn.push(_filter(arr[i].text,key,6));	
+		}	
+	
+	}
+	
+	console.log("forreturn is : "+forreturn);
+
+}
+
+function _filter(str,key,bias){
+        var index = str.indexOf(key);
+        if(index+bias>str.length){
+                return str.substring(index+1);
+        }else{
+                return str.substring(index+1,index+1+bias);
+        }
+}
 
 function binsearch(data, val){
 	if(!data) return -1;
@@ -118,8 +143,11 @@ var urls= [
 		 var query = param.query;
 		 res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
 		 
-		 var js = kwupside.search(query.q,query.size,function(result){
-  		 	res.end(JSON.stringify(result));	
+		 var js = kwupside.find(query.q,query.size,function(db,result){
+			result_output = _join(result,3,query.q);
+			var test_data = ['new','old'];
+  		 	res.end(JSON.stringify(test_data));	
+			db.close();
 		 });
 	}],
 	
