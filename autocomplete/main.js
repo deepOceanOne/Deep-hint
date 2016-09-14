@@ -7,20 +7,21 @@ String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g, '');};
 
 
 function _join(arr,len,key){
+
+	var biasconst = 12;
 	var forreturn = [];
 	if(len<arr.length){
 		for(var i=0;i<len;i++){
-			forreturn.push(_filter(arr[i].text,key,6));	
+			forreturn.push(_filter(arr[i].text,key,biasconst));	
 		}	
 	}else{
 		for(var i=0;i<arr.length;i++){
-			forreturn.push(_filter(arr[i].text,key,6));	
+			forreturn.push(_filter(arr[i].text,key,biasconst));	
 		}	
 	
 	}
 	
-	console.log("forreturn is : "+forreturn);
-
+	return forreturn;
 }
 
 function _filter(str,key,bias){
@@ -144,9 +145,10 @@ var urls= [
 		 res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
 		 
 		 var js = kwupside.find(query.q,query.size,function(db,result){
-			result_output = _join(result,3,query.q);
+			var join_const = 9;
+			result_output = _join(result,join_const,query.q);
 			var test_data = ['new','old'];
-  		 	res.end(JSON.stringify(test_data));	
+  		 	res.end(JSON.stringify(result_output));	
 			db.close();
 		 });
 	}],
