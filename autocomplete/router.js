@@ -22,9 +22,12 @@ var error  =function(res){
     res.end("<h1>"+res.url+"</h1>"+'404');
 };
 var route = function(req, res, urls, passed_args){
+
+
     for (var i=0;i<urls.length;i++){
 
         var param = parseURL(req.url,true);
+
         var args = new RegExp(urls[i][0]).exec(param.pathname);
 
         if (args !== null){
@@ -34,6 +37,7 @@ var route = function(req, res, urls, passed_args){
             return true;
         }
     }
+
     return error(res);
 };
 
