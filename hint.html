@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>循环滚动列表</title>
+<link href="css/style.css" rel="stylesheet"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/autoScroll.js"></script>
+<script>
+ $(function(){
+
+ 	 $("#autoScroll02").autoScroll({
+	  direction: 'up',     
+	  interval: 50,      //interval、speed、distance都很小时，就形成了平滑滚动现象。
+	  speed: 10,      
+	  distance: 1,      
+	  liHeight: 30,          
+	  showNum: 4      
+	 });	
+
+
+ 	 
+
+
+ 	 lismanager = {
+
+ 	 		liArray : [],
+
+ 	 		init : function(select){
+ 	 			// init thing, get the li length 
+ 	 			var len = $(select+" li").length;
+ 	 			this.index = len;
+ 	 			for(var i=0;i<len;i++){
+ 	 				this.liArray.push($(select+ " li:eq(" + i +")"));
+ 	 			}
+ 	 		},
+
+ 	 		index : 0,
+
+ 	 		bias : 0,
+
+ 	 		push : function(litext){
+ 	 			this.liArray[parseInt((this.index-1)*Math.random())].text(litext);
+ 	 		}
+ 	 };
+
+ 	 // use for  li 
+ 	 var select = ".wrap .autoBox"
+ 	 lismanager.init(select);
+ 	 lismanager.push("one");
+ 	 lismanager.push("one");
+ 	 lismanager.push("one");
+ 
+ 	 
+ 	 
+
+
+ 	});
+</script>
+</head>
+<body>
+	 <!--第二个案例 保持结构不变，id不同就可以复用多个-->
+<div class=wrap>
+ <div class="boxs box02">
+ <div class="autoBox" id="autoScroll02">
+  <ul class="texts">
+  <li id='one'><a href="#">1. 何日功，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">2. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">3. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">4. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">5. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">6. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">7. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">8. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  </ul>
+ </div>
+ </div>
+</div>	  
+
+
+</body>
+</html>
