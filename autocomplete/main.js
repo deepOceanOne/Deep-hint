@@ -9,7 +9,7 @@ String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g, '');};
 
 function _join(arr,len,key){
 
-	var biasconst = 12;
+	var biasconst = 36;
 	var forreturn = [];
 	if(len<arr.length){
 		for(var i=0;i<len;i++){

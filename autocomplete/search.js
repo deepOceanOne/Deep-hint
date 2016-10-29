@@ -11,16 +11,16 @@ var searchOps = {
 		  console.log("Connected correctly to server");
 
      		  var collection = db.collection('hint');
-		  var regexp = '.'+key+'.';
+		  	  var regexp = '.'+key+'.';
 	          collection.find({text: {$regex:regexp} }).toArray(function(err, docs) {
-			console.log(docs);
-			var docs_output = docs.sort(function(a,b){return Math.random()>.5?-1:1;})
-			callback(db,docs_output);
+				  console.log(docs);
+				  var docs_output = docs.sort(function(a,b){return Math.random()>.5?-1:1;})
+				  callback(db,docs_output);
 		
-       	          });
+       	      });
 
 
-	    	});					
+	   	});					
 
 
 	},

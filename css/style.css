@@ -9,75 +9,76 @@ body {
      color: #333;
 }
 ul   { 
-      list-style: none; 
+     list-style: none; 
 }
 a {
       color: #333;
       outline: none;
       text-decoration: none;
 }
-a:hover { color: #2986dd; }
+a:hover { 
+
+      color: #2986dd; 
+
+}
 
 .clearfix:after {
-    visibility: hidden;
-     display: block;
+      visibility: hidden;
+      display: block;
       font-size: 0;
-       content: " ";
-        clear: both;
-         height: 0;
-     }
+      content: " ";
+      clear: both;
+      height: 0;
+}
   
-    .wrap {
-         width: 900px;
-          padding-top: 10%;
-          padding-left: 50%;
-           margin: 0 auto;
-       }
-   .boxs {
-        padding: 15px;
-         margin: 0 auto 30px;
-          background-color: #e4fbff;
-      }
-     
-      .box02 {
-           float: left;
-            width: 400px;
-        }
-                            
-    /* 具体样式 ---------- */
-    /* 通用必需样式 */ /* PS：有些重要样式在js里先写好了，下面id容器、ul和li标签的样式比较重要 */ 
-    .autoBox {
-         position: relative;
-          margin: 0 auto;
-           overflow: hidden;
-       }
-   .autoBox ul {
-        position: absolute;
-         list-style: none;
-          z-index: 2;
-      }
-       
-                                   
-   /* 第二、三个列表 */ /* PS：上下滚动型列表需要css定义宽度，li标签尽量不要设置margin值 */
-   #autoScroll02 {
-         width: 100%;
-         height: 50%;
-         margin-top: 33%;
-     }
-#autoScroll02 ul li {
-          height: 30px;
-          line-height: 30px;
-          overflow: hidden;
+.wrap {
+      width: 900px;
+      padding-top: 10%;
+      padding-left: 50%;
+      margin: 0 auto;
+}
+                
+                      
+.autoBox {
+      position: relative;
+      margin: 0 auto;
+      overflow: hidden;
+      background-color: #e4e4e4;
+}
+.autoBox ul {
+      position: absolute;
+      list-style: none;
+      z-index: 2;
+}
+
+
+/* 第二、三个列表 */ /* PS：上下滚动型列表需要css定义宽度，li标签尽量不要设置margin值 */
+#autoScroll {
+      width: 50%;
+      height: 80%;
+      margin-top: 3%;
+}
+#autoScroll ul li {
+      height: 30px;
+      line-height: 30px;
+      overflow: hidden;
 }
       
-#autoScroll02 li a,  {
-    display: block;
-    width: 100%;
-    height: 34px;
-    line-height: 34px;
-    margin: 5px 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+#autoScroll li a,  {
+      display: block;
+      width: 100%;
+      height: 34px;
+      line-height: 34px;
+      margin: 5px 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
 }
     
+.write {
+
+      height : 50%;
+      width: 50%;
+      display: block;
+      margin: 5px 0;
+}    

@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* 简单reset */
+body, ul, li {
+     margin: 0;
+     padding: 0;
+  }
+body {
+     font: 14px/24px Microsoft YaHei ;
+     color: #333;
+     background-image: url('./img/bcg.png');
+}
+ul   { 
+     list-style: none; 
+}
+a {
+      color: #333;
+      outline: none;
+      text-decoration: none;
+}
+a:hover { 
+
+      color: #2986dd; 
+
+}
+
+.clearfix:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+}
+  
+.wrap {
+
+      padding-top: 3%;
+      margin: 0 auto 10%;
+      width :90%;
+
+}
+         
+.textarea {
+
+      font-size: 21px;
+      font-weight: 500;
+      color:#fff;
+      background-color: #f59231;
+
+}         
+
+.box1 {
+
+      float: left;
+      width: 100%;
+}  
+
+.box2 {
+
+      float: right;
+      width: 80%;
+}               
+
+.ui-widget{
+
+      margin:50px auto;
+      width: 30% ;
+      border-radius:25px;
+      border:2px solid;
+      border-color:#a72525
+
+}
+                     
+.ui-widget input {
+
+      width: 80%;
+
+}
+
+.autoBox {
+
+      position: absolute;
+      overflow: hidden;
+      max-width: 50%;
+      border-radius:25px;
+      background-color: #e4e4e4;
+
+}
+
+.writeBox {
+
+      position: absolute;
+      overflow: hidden;
+
+}    
+
+.autoBox ul {
+
+      position: absolute;
+      list-style: none;
+      z-index: 2;
+
+}
+
+
+/* 第二、三个列表 */ /* PS：上下滚动型列表需要css定义宽度，li标签尽量不要设置margin值 */
+#autoScroll {
+
+      width: 70%;
+      height: 80%;
+      margin-top: 3%;
+
+}
+#autoScroll ul li {
+
+      height: 30px;
+      line-height: 30px;
+      overflow: hidden;
+
+}
+      
+#autoScroll li a,  {
+
+      display: block;
+      width: 70%;
+      height: 34px;
+      line-height: 34px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+}
+
+  
+
+
