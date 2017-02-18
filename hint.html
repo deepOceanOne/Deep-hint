@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>循环滚动列表</title>
+<link href="css/style.css" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/jquery.autocompleter.css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/autoScroll.js"></script>
+
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.autocompleter.min.js" type="text/javascript"></script>
+<script>
+ $(function(){
+
+ 	 $("#autoScroll").autoScroll({
+	  direction: 'up',     
+	  interval: 50,      //interval、speed、distance都很小时，就形成了平滑滚动现象。
+	  speed: 10,      
+	  distance: 1,      
+	  liHeight: 30,          
+	  showNum: 13      
+	 });	
+
+
+
+    $( "#tags" ).autocomplete({
+      source: function(request, cb){
+
+          $.getJSON("/qs.b",{q:request.term,size:10},function(data){
+                cb(data ||[]);
+               
+                // clear input immediately
+                $("#tags").val("");
+                 
+
+          });
+      }
+    });
+
+ 	 
+/*
+
+ 	 lismanager = {
+
+ 	 		liArray : [],
+
+ 	 		init : function(select){
+ 	 			// init thing, get the li length 
+ 	 			var len = $(select+" li").length;
+ 	 			this.index = len;
+ 	 			for(var i=0;i<len;i++){
+ 	 				this.liArray.push($(select+ " li:eq(" + i +")"));
+ 	 			}
+ 	 		},
+
+ 	 		index : 0,
+
+ 	 		bias : 0,
+
+ 	 		push : function(litext){
+ 	 			this.liArray[parseInt((this.index-1)*Math.random())].text(litext);
+ 	 		}
+ 	 };
+
+ 	 // use for  li 
+ 	 var select = ".wrap .autoBox";
+ 	 lismanager.init(select);
+ 	 lismanager.push("one");
+ 	 lismanager.push("one");
+ 	 lismanager.push("one");
+ 
+ 	 
+ 	 
+*/
+
+ 	});
+</script>
+</head>
+<body>
+	 <!--第二个案例 保持结构不变，id不同就可以复用多个-->
+
+<div class="ui-widget" style="margin:50px auto;width:500px border-radius:25px;border:2px solid;border-color:#a72525">
+  <label for="tags">开始写吧: </label>
+  <input id="tags">
+</div>
+
+<div class="write">
+  <textarea class="answers">
+    让我们，开始写吧。
+  </textarea>
+</div>
+
+<div class=wrap>
+ <div class="autoBox" id="autoScroll">
+  <ul class="texts">
+  <li><a href="#">1. 何日功，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">2. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">3. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">4. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">5. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">6. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">7. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">8. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">2. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">3. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">4. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">5. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">6. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">7. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  <li><a href="#">8. 何日功成名遂了，还乡，醉笑陪公三万场。不用诉离觞，痛饮从来别有肠。</a></li>
+  </ul>
+ </div>
+ </div>  
+
+
+</body>
+</html>
