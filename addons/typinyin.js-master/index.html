@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>让输入打动你的心灵</title>
+	<link rel="stylesheet" href="./typinyin.css">
+	<link rel="stylesheet" href="./main.css">
+	<script src="./typinyin.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script>
+		window.onload = function(){
+			var demo = new Typinyin();
+			demo.attach('#typinyin_demo'); // Attach element
+			demo.setOptions({
+				sentences: [
+					{
+			ch: ["写下你的故事吧"],
+			py: ["四年来，天真的玛菲尔一直深信:父亲之所以一 直没回家，是因为他在宾州经营着一家大型采煤场忙得脱不开身。当玛菲尔和两个弟弟想念父亲时，母亲就安慰他们: 采煤场一般要经营四年才能稳定 ，到那 时父亲就能回来看我们了 !”但就在圣诞节即将来临，也就是父亲离家四年许 诺回家的时刻，玛菲尔却突然得知，原来父亲在宾州经营采煤场是一个残酷的谎言。那天，同桌比索问玛菲尔希望得到什么圣诞礼物，一心牵挂着父亲的玛菲尔说: 希望父亲开着鲜红的跑车回来看我们 !”比索 听完她的愿望，睁大眼下问 : 什么/你父亲刊满释放还能从监狱里开一部跑车回来? ”比索的问题让十一岁的玛菲尔如遭雷击，泪水迅速布满刚刚还阳光绚烂的脸庞 ，她对比索低吼道 : 你不能侮辱我的父亲 !他在宾州拥有采煤场 。”比索白了 她一眼说 : 不信你去问卡伊 、爱娃或者你母亲 ，谁都知道你父亲在中蹲监狱! 玛菲尔抓起书包狂奔出教 室。她要拉母亲来跟比索证实:世上没有比父亲更正直的男人，他怎么会蹲监狱呢?远远地，玛菲尔就看见花园长凳上熟悉的背影，母亲一定是太累了，又在长凳上打起盹了。四年， 她一个人抚养着三个孩子，此时也一定和自己一样想 父亲了吧?玛菲尔放慢脚步，轻轻绕到母亲面前。她睡着了，唇角带着美丽的微笑 ，但眼角有浅浅的泪痕 。玛菲尔正要给母亲盖上毛毯时，突然发现她怀里 躺着一个浅灰色的信封 。 宾州第七十一监狱托比斯 ”，再熟悉不过的字体，却来自如此残酷的地方。毛毯从 玛菲尔手中轻轻滑落，她几乎要哭出声来。望着依旧睡得安稳的母亲 ，玛菲尔强忍着即将流下的泪水 ,轻轻拾起地上的毯子 ,踮着脚尖离开了花园。 玛菲尔背起书包，掩上铁门，回头看看玫瑰怒放的花园里，孤独憔悴、泪痕满面的母亲睡得那么安稳 ，这个十一岁的小女孩对父亲的鄙视突然减少了几分。 善良的父母一定是想用这种方式，为他们挑起一片干净善良的爱的天空。玛菲尔跟比索道歉 ，并求他: 千万别告诉我弟弟 ，也请相信我的父亲回到赛维克立镇时，只会带给人们 善良和真诚 。”听到玛菲尔的话，比索羞愧难当 ，他说:  如果你父亲回来时需要一辆跑车，我想我父亲可能会借给他。”比索的父亲埃德华先生 ，在赛维克立镇经营着一家大型汽车租赁公司。玛菲尔是家里的老大，看到母亲为了让孩子们快 乐无忧地成长，付出了一切，她知道自己有责任替妈 妈分担，玛菲尔不希望生活因为这个秘密而改变。周日晚上，她依旧和两个弟弟蜷在沙发里，认真幸福地听母亲念父亲从  宾州托比斯采煤场 ”的来信，信里 依旧在描述让全家人引以为豪的采煤场:"],
+		}
+				], // Sentences needs to be typed
+				startDelay: 1000, // Time before typing starts, in ms
+				typeSpeed: 80, // Time gap between each character, in ms
+				pause: 1000, // Time waiting before each sentence is to be deleted, in ms
+				backSpeed: 50, // Backspacing speed, in ms
+				cursorChar: "|", // Character for cursor, you may want to use "_" if you are emulating a console
+				loop: false, // Loop when finished typing
+			});
+			demo.finished = function() {
+				console.log("Typinyin.js Demo Finished!"); // Excute on finished typing, will not excute when "loop" has been set to true
+			};
+			demo.init(); // Initialize and start typing
+		}
+	</script>
+</head>
+<body >
+	<div class="wrap">
+		<h1 class="h1">故事</h1>
+		<div class="type-wrap">
+			<span id="typinyin_demo" style="white-space:pre;"></span>
+		</div>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "deep-hint",
+  "version": "1.0.0",
+  "description": "smart hint while writing things, using artificial intelligence.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepOceanOne/Deep-hint.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepOceanOne/Deep-hint/issues"
+  },
+  "homepage": "https://github.com/deepOceanOne/Deep-hint#readme",
+  "dependencies": {
+    "mongodb": "^2.2.33"
+  }
+}

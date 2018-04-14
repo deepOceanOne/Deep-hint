@@ -10,7 +10,7 @@ var searchOps = {
 		  assert.equal(null, err);
 		  console.log("Connected correctly to server");
 
-     		  var collection = db.collection('hint');
+     		  var collection = db.collection('song');
 		  	  var regexp = '.'+key+'.';
 	          collection.find({text: {$regex:regexp} }).toArray(function(err, docs) {
 				  console.log(docs);
